@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Agenda Oncologica</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_borrar">borrar</string>
+
+    <string name="action_agregar">agregar</string>
+
+    <string name="action_edit">editar</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="informacion_paciente">Informaciòn personal</string>
+    <string-array name="prefijoMedico">
+        <item>Dr.</item>
+        <item>Dra.</item>
+        <item>Enfermera.</item>
+    </string-array>
+    <string-array name="sexo">
+        <item>Femenino</item>
+        <item>Masculino</item>
+    </string-array>
+
+     <string name="informacion_fundahog">
+       Los enfermos de cáncer atraviesan por situaciones difíciles, desde lo emocional, lo físico y lo social. Por tal razón es necesario acceder a una atención médica con calidad y calidez y un acompañamiento que les permitan enfrentar dignamente el proceso de recuperación.
+        Los especialistas advierten que es muy importante el apoyo de la familia y una buena relación con su médico, sobre todo porque esta enfermedad conlleva dificultades económicas, familiares, psicológicas, de pareja o de autoimagen.
+        Esta Agenda Oncológica le servirá ​de apoyo mientras dure su tratamiento de quimioterapia / radioterapia.
+    </string>
+    <string name="informacion_fundahog2">
+        “Si cambias el modo en que miras las cosas, las cosas que miras cambian” –Wayne Dyer.
+    </string>
+    <string name="informacion_fundahog3">
+        Entre otros programas de Fundahog, destacan la “escuela para pacientes”, proyecto que ofrece herramientas de apoyo psicológico que ayudan a los pacientes a aceptar y enfrentar la situación, y “sembrando salud”, plan de concienciación sobre los exámenes preventivos a través de jornadas de salud y campañas informativas.
+    </string>
+    <string name="contacto">
+        Para mayor información sobre Fundahog y sus programas de apoyo, ingresa en http://picasaweb.google.com/fundahog, o contáctalos a través de los teléfonos  0414.867.84.44, 0286.961.74.84, FAX: 0286.9621022.
+    </string>
+    <string name="copyright">
+        Todos los derechos reservados Agenda Oncológica de FUNDAHOG RIF: J-31238774-2.
+    </string>
+</resources>

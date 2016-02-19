@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:background="@color/md_transparent">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/md_white_1000">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/md_green_500_75"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Nueva Alergia"
+                android:id="@+id/txt_titleDialog"
+                android:textColor="@color/md_white_1000"
+                android:typeface="serif"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:gravity="left|center_vertical|center"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="1">
+
+
+            <FrameLayout
+                android:id="@+id/statusBar"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_weight="0.00" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:id="@+id/edt_Dinput_usuario"
+                android:hint="Nueva alergia"
+                android:textColorHint="@color/md_disabled_hint_text"
+                android:layout_gravity="center_horizontal"
+                android:textSize="25dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.05">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:text="Agregar"
+                    android:id="@+id/boton_agregar"
+                    android:textSize="20dp"
+                    android:fontFamily="Verdana"
+                    android:layout_gravity="left"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/botoncontactos"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:text="Cancelar"
+                    android:id="@+id/boton_cancelar"
+                    android:textSize="20dp"
+                    android:background="@drawable/botoncontactos"
+                    android:fontFamily="Verdana"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="right"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
