@@ -4,11 +4,11 @@ package com.example.jesus.agendaoncologica;
  * Created by Jesus on 1/31/2016.
  */
 public class HistoriaPaciente {
-    private String numerohistoria;
-    private String condicion;
-    private String tipoSangre;
-    private String estatura;
-    private String peso;
+    private String numerohistoria = " ";
+    private String condicion =" ";
+    private String tipoSangre =" ";
+    private String estatura =" ";
+    private String peso = " ";
 
 
     public HistoriaPaciente() {

@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 
 /**
  * Created by Jesus on 12/18/2015.
@@ -69,6 +70,13 @@ public class FragmentoWebInformativa extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.action_help){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",8);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_yellow_50"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Menu principal"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="
+   - Para agregar un nuevo tratamiento dar click en el boton tratamientos
+   - Para agregar una nueva nota dar click en el boton notas
+   - Para agregar un examen dar click en el boton examenes
+   - Si desea ver informacion acerca del cancer dar click en el boton informacion
+
+   Si desliza el dedo de izquierda a derecha se abrira una barra lateral en la cual podra:
+
+   - Agregar informacion personal dando click en informacion personal
+   - Agregar informacion del medico tratante dando click en la opcion mi medico
+   - Agregar informacion referente a su historia medica
+   - En la seccion de contactos encontrara informacion referente a la Fundacion Hematooncologica de Guayana y acerca del desarrollo de la aplicacion.
+
+
+" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_OkAyudaTratamiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OK"
+                    android:textColor="@color/md_white_1000"
+                    android:background="@color/md_red_300"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

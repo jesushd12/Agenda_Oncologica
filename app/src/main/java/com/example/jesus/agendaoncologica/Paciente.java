@@ -110,6 +110,8 @@ public class Paciente {
     }
 
 
+
+    public String obtenerNumeroHistoria(){return  historia.getNumerohistoria();};
     public String obtenerCondicion(){
         return historia.getCondicion();
     }

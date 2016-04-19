@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_yellow_50"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Agregar tipo de examen"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="     Puede agregar nuevos tipos de examen al examen existente simplemente haciendo click en el botón + y marcar los nuevos tipos que desee agregar.
+Puede modificar los valores de los análisis haciendo click sobre el tipo de examen al cual pertenece y luego modificar el valor respectivo
+
+" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Eliminar tipo de Examen"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="  - Para eliminar deberá mantener presionado el tipo examen el cual desea eliminar
+- Se mostrará un dialogo para confirmar que si realmente quiere eliminar dicho tipo de examen
+- En el dialogo se mostrara la opcion de eliminar de dicho examen o eliminar para siempre.
+- Seleccione la opción que mejor le convenga
+" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="eliminar analisis"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="   - Para eliminar deberá mantener presionado el analisis el cual desea eliminar
+- Se mostrará un dialogo para confirmar que si realmente quiere eliminar dicho análisis
+- En el dialogo se mostrara la opcion de eliminar de dicho examen o eliminar para siempre.
+- Seleccione la opción que mejor le convenga
+
+" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Agregar nuevo tipo de examen"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="   Puede agregar un nuevo tipo de examen dando click en la opción nuevo tipo en el cuadro de selección de tipo de examen.
+Al agregar un nuevo tipo de examen se pedirá que ingrese un análisis asociado al nuevo tipo de examen agregado
+" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_OkAyudaTratamiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OK"
+                    android:textColor="@color/md_white_1000"
+                    android:background="@color/md_red_300"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

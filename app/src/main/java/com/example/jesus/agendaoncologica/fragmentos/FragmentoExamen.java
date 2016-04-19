@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.example.jesus.agendaoncologica.Examen;
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 import com.example.jesus.agendaoncologica.dialogs.DialogoTipoExamen;
 
 import java.text.SimpleDateFormat;
@@ -139,6 +140,13 @@ public class FragmentoExamen extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.action_help){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",3);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
+        }
         return super.onOptionsItemSelected(item);
     }
 

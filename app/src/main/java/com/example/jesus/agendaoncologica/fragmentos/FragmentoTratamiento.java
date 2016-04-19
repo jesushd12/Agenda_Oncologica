@@ -19,6 +19,7 @@ import com.example.jesus.agendaoncologica.Adapters.TratamientoAdapter;
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.Tratamiento;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 import com.example.jesus.agendaoncologica.dialogs.EleccionTratamiento;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
@@ -163,6 +164,13 @@ public class FragmentoTratamiento extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.action_help){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",1);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
+        }
         return super.onOptionsItemSelected(item);
     }
 

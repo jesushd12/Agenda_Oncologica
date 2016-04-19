@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.Tratamiento;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 
 /**
  * Created by Jesus on 1/19/2016.
@@ -86,5 +88,20 @@ public class InformacionTratamiento extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.removeItem(R.id.action_settings);
+        inflater.inflate(R.menu.treatment_main, menu);
+        menu.removeItem(R.id.action_add);
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_help){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",2);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

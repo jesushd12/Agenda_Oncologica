@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.jesus.agendaoncologica.Medico;
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 
 /**
  * Created by Jesus on 2/1/2016.
@@ -160,6 +161,13 @@ public class InformacionMedico extends Fragment {
             ubicacion.setEnabled(true);
         }
 
+        if(id == R.id.action_help2){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",12);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
+        }
         return super.onOptionsItemSelected(item);
     }
     @Override

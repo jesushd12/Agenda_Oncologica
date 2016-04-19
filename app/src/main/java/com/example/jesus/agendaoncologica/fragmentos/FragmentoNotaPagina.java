@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.jesus.agendaoncologica.Nota;
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 
 import java.util.Calendar;
 
@@ -114,6 +115,14 @@ public class FragmentoNotaPagina extends Fragment {
                 Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
             }
 
+        }
+
+        if(id == R.id.action_help2){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",10);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
         }
         return super.onOptionsItemSelected(item);
     }

@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.jesus.agendaoncologica.Nota;
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 
 import java.util.ArrayList;
 
@@ -144,6 +145,13 @@ public class FragmentoNota extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.action_help){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",9);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -223,7 +223,7 @@ public class DatabaseManager {
         valores.put("numerohistoria", historiaPaciente.getNumerohistoria());
         valores.put("peso", historiaPaciente.getPeso());
         valores.put("estatura", historiaPaciente.getEstatura());
-        valores.put("tipodesagre", historiaPaciente.getTipoSangre());
+        valores.put("tipodesangre", historiaPaciente.getTipoSangre());
         valores.put("condicion", historiaPaciente.getCondicion());
         String[] campo = {"1"};
         db.update("paciente", valores, "_id=?", campo);

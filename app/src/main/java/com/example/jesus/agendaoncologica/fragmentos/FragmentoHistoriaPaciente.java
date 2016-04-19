@@ -22,6 +22,7 @@ import com.example.jesus.agendaoncologica.HistoriaPaciente;
 import com.example.jesus.agendaoncologica.Paciente;
 import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class FragmentoHistoriaPaciente extends Fragment{
     EditText tipoDeSangre;
     EditText estatura;
     EditText peso;
+    EditText numeroHistoria;
     ArrayList<Alergia> alergias;
     DatabaseManager DB;
     boolean flag;
@@ -62,6 +64,7 @@ public class FragmentoHistoriaPaciente extends Fragment{
         tipoDeSangre = (EditText) v.findViewById(R.id.edt_tipoDeSangre);
         estatura = (EditText) v.findViewById(R.id.edt_estatura);
         peso = (EditText) v.findViewById(R.id.edt_peso);
+        numeroHistoria = (EditText)v.findViewById(R.id.edt_numeroHistoria);
 
 
         Paciente paciente = DB.consultarDatosPaciente();
@@ -72,6 +75,7 @@ public class FragmentoHistoriaPaciente extends Fragment{
             tipoDeSangre.setText(paciente.obtenerTipoSangre());
             estatura.setText(paciente.obtenerEstatura());
             peso.setText(paciente.obtenerPeso());
+            numeroHistoria.setText(paciente.obtenerNumeroHistoria());
         }
 
         desahabilitarCampos();
@@ -104,6 +108,7 @@ public class FragmentoHistoriaPaciente extends Fragment{
             if(condicion.getText().toString().equalsIgnoreCase("")){
                 return true;
             }
+            historia.setNumerohistoria(numeroHistoria.getText().toString());
             historia.setCondicion(condicion.getText().toString());
             historia.setTipoSangre(tipoDeSangre.getText().toString());
             historia.setEstatura(estatura.getText().toString());
@@ -124,6 +129,13 @@ public class FragmentoHistoriaPaciente extends Fragment{
             flag = true;
             habilitarCampos();
         }
+        if(id == R.id.action_help2){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",6);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
+        }
         return super.onOptionsItemSelected(item);
     }
     @Override
@@ -140,6 +152,7 @@ public class FragmentoHistoriaPaciente extends Fragment{
         tipoDeSangre.setEnabled(false);
         estatura.setEnabled(false);
         peso.setEnabled(false);
+        numeroHistoria.setEnabled(false);
     }
 
     private void habilitarCampos(){
@@ -147,6 +160,7 @@ public class FragmentoHistoriaPaciente extends Fragment{
         tipoDeSangre.setEnabled(true);
         estatura.setEnabled(true);
         peso.setEnabled(true);
+        numeroHistoria.setEnabled(true);
     }
 
 

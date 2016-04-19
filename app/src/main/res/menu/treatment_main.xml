@@ -9,6 +9,14 @@
         app:showAsAction="always"
 
         />
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="100"
+        android:title="Ayuda"
+        android:icon="@android:drawable/ic_menu_help"
+        app:showAsAction="always"
+
+        />
 
 
 </menu>

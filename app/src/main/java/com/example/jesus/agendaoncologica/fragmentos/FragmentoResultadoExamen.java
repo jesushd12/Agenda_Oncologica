@@ -23,6 +23,7 @@ import com.example.jesus.agendaoncologica.R;
 import com.example.jesus.agendaoncologica.ResultadoExamen;
 import com.example.jesus.agendaoncologica.TipoExamen;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 import com.example.jesus.agendaoncologica.dialogs.DialogoTipoAnalisis;
 
 import java.util.ArrayList;
@@ -133,6 +134,13 @@ public class FragmentoResultadoExamen extends Fragment {
                 db.actualizarResultado((ResultadoExamen)listaResultados.getAdapter().getItem(aux));
             }
             Toast.makeText(getContext(),"Sus datos han sido guardado satisfactoriamente",Toast.LENGTH_SHORT).show();
+        }
+        if(id == R.id.action_help2){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",5);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
         }
         return super.onOptionsItemSelected(item);
     }

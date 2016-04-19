@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import com.example.jesus.agendaoncologica.*;
 import com.example.jesus.agendaoncologica.database.DatabaseManager;
+import com.example.jesus.agendaoncologica.dialogs.DialogoAyuda;
 
 /**
  * Created by Jesus on 1/31/2016.
@@ -144,33 +145,54 @@ public class InformacionPaciente extends Fragment {
         int id = item.getItemId();
 
         if (id == R.id.action_save) {
-            if(!flag){
-                Toast.makeText(getContext(),"No ha hecho ningun cambio",Toast.LENGTH_SHORT).show();
+
+            if (!flag) {
+                Toast.makeText(getContext(), "No ha hecho ningun cambio", Toast.LENGTH_SHORT).show();
                 return false;
             }
 
-            if(!validarCampos()) {
-                Toast.makeText(getContext(),"Por favor completa todos los datos",Toast.LENGTH_SHORT).show();
+            if (!validarCampos()) {
+                Toast.makeText(getContext(), "Por favor completa todos los datos", Toast.LENGTH_SHORT).show();
                 return false;
             }
-            try {
+            if(paciente != null) {
+                try {
                 pacienteNuevo = new Paciente();
                 pacienteNuevo.setNombre(nombre.getText().toString());
                 pacienteNuevo.setApellido(apellidoUsuario.getText().toString());
                 pacienteNuevo.setCedula(cedulaUsuario.getText().toString());
-                pacienteNuevo.setFechaNacimiento(formatter.parse(fechaNacimientoUsuario.getText().toString()));
+                    pacienteNuevo.setFechaNacimiento(formatter.parse(fechaNacimientoUsuario.getText().toString()));
                 pacienteNuevo.setLugarNacimiento(lugarNacimientoUsuario.getText().toString());
                 pacienteNuevo.setTelefonocontacto1(tlfContactoUsuario.getText().toString());
                 pacienteNuevo.setTelefonocontacto2(tlfContactoUsuario2.getText().toString());
                 pacienteNuevo.setEmail(nombreUsuario.getText().toString());
                 pacienteNuevo.setSexo(sexo.getSelectedItem().toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                DB.actualizarPaciente(pacienteNuevo);
+                getActivity().onBackPressed();
+            }else {
+
+                try {
+                    pacienteNuevo = new Paciente();
+                    pacienteNuevo.setNombre(nombre.getText().toString());
+                    pacienteNuevo.setApellido(apellidoUsuario.getText().toString());
+                    pacienteNuevo.setCedula(cedulaUsuario.getText().toString());
+                    pacienteNuevo.setFechaNacimiento(formatter.parse(fechaNacimientoUsuario.getText().toString()));
+                    pacienteNuevo.setLugarNacimiento(lugarNacimientoUsuario.getText().toString());
+                    pacienteNuevo.setTelefonocontacto1(tlfContactoUsuario.getText().toString());
+                    pacienteNuevo.setTelefonocontacto2(tlfContactoUsuario2.getText().toString());
+                    pacienteNuevo.setEmail(nombreUsuario.getText().toString());
+                    pacienteNuevo.setSexo(sexo.getSelectedItem().toString());
 
 
-            } catch (ParseException e) {
-                e.printStackTrace();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                DB.insertarUsuario(pacienteNuevo);
+                getActivity().onBackPressed();
             }
-            DB.insertarUsuario(pacienteNuevo);
-            getActivity().onBackPressed();
         }
         if (id == R.id.action_edit) {
             flag = true;
@@ -183,6 +205,13 @@ public class InformacionPaciente extends Fragment {
             tlfContactoUsuario.setEnabled(true);
             tlfContactoUsuario2.setEnabled(true);
             nombreUsuario.setEnabled(true);
+        }
+        if(id == R.id.action_help2){
+            DialogoAyuda dialogoAyuda = new DialogoAyuda();
+            Bundle bundle = new Bundle();
+            bundle.putInt("tipo",11);
+            dialogoAyuda.setArguments(bundle);
+            dialogoAyuda.show(getFragmentManager(),"my_dialog");
         }
         return super.onOptionsItemSelected(item);
     }
